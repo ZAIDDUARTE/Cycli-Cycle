@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flowchart for C API Integration with Python</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <script>
+        function getResponse() {
+            const userInput = document.getElementById('userInput').value.toLowerCase();
+            let response = '';
+
+            if (userInput.includes('hello') || userInput.includes('hi')) {
+                response = 'Hello! How can I assist you today?';
+            } else if (userInput.includes('emotional state')) {
+                response = 'I can help analyze your emotional state. Please provide some details.';
+            } else if (userInput.includes('help')) {
+                response = 'Sure! What do you need help with?';
+            } else {
+                response = 'I\'m sorry, I didn\'t understand that. Can you please rephrase?';
+            }
+
+            const chatLog = document.getElementById('chatLog');
+            chatLog.innerHTML += `<div class="text-right mb-2"><span class="bg-blue-500 text-white p-2 rounded">${response}</span></div>`;
+            document.getElementById('userInput').value = '';
+        }
+    </script>
+</head>
+<body class="bg-gray-100 text-gray-800" style="font-family: Gowun Batang ; font-size: 20px;">
+
+
+
+
+    
+
+
+<!-- Welcome Section -->
+<section class="bg-blue-100 p-8 rounded-lg shadow-md mt-8">
+    <h1 class="text-3xl font-bold text-center text-gray-800">Welcome to Our Vision!</h1>
+    <p class="mt-4 text-lg text-center text-gray-700">
+        We are thrilled to have you join us for this meeting! In the next 60 minutes, we aim to discuss our groundbreaking project that will redefine how individuals interact with their emotions.
+    </p>
+    <div class="mt-6">
+        <h2 class="text-2xl font-semibold text-center text-gray-800">Our Mission</h2>
+        <p class="mt-2 text-lg text-center text-gray-700 max-w-3xl mx-auto">
+            We are building the world's most emotionally intelligent chat bot—designed to assist people in managing their emotions, reducing stress, and improving overall well-being. By harnessing advanced technology, our chat bot will understand and respond to emotional cues, providing personalized support to those who need it most. 
+        </p>
+    </div>
+    <div class="mt-8">
+        <h2 class="text-2xl font-semibold text-center text-gray-800">Why This Matters</h2>
+        <p class="mt-2 text-lg text-center text-gray-700 max-w-3xl mx-auto">
+            In today's fast-paced world, emotional health is often overlooked. Our chat bot aims to bridge that gap, providing a safe space for users to express their feelings and receive meaningful feedback. We believe that by helping individuals lower their stress levels and enhance their emotional intelligence, we can contribute to a healthier and happier society.
+        </p>
+    </div>
+    <div class="mt-8 text-center">
+        <button id="start-timer" class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition duration-200">
+            Start 60 Minute Countdown
+        </button>
+        <div id="timer" class="mt-4 text-xl text-gray-800 hidden">Time Remaining: <span id="time">60:00</span></div>
+    </div>
+</section>
+
+<script>
+    document.getElementById('start-timer').onclick = function() {
+        let timeLeft = 3600; // 60 minutes in seconds
+        const timerDisplay = document.getElementById('time');
+        document.getElementById('timer').classList.remove('hidden');
+        
+        const countdown = setInterval(function() {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            timerDisplay.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+            timeLeft--;
+            if (timeLeft < 0) {
+                clearInterval(countdown);
+                alert('Time is up!');
+            }
+        }, 1000);
+    };
+</script>
+
+
+
+
+
+
+
+
+
+
+    <div class="container mx-auto p-5">
+        <h1 class="text-3xl font-bold text-center text-blue-600">Flowchart for C API Integration with Python</h1>
+        <h2 class="text-xl text-center text-blue-500">User State Management Framework</h2>
+
+        <div class="flowchart flex flex-col items-center mt-10 mb-10">
+            <div class="step-circle bg-blue-500 text-white w-20 h-20 rounded-full flex items-center justify-center">1</div>
+            <div class="step bg-blue-500 text-white p-4 rounded-md shadow-md w-64 text-center">User Input</div>
+            <div class="arrow border-l-2 border-blue-500 h-10"></div>
+
+            <div class="step-circle bg-blue-500 text-white w-20 h-20 rounded-full flex items-center justify-center">2</div>
+            <div class="step bg-blue-500 text-white p-4 rounded-md shadow-md w-64 text-center">Detect Emotional State</div>
+            <div class="arrow border-l-2 border-blue-500 h-10"></div>
+
+            <div class="step-circle bg-blue-500 text-white w-20 h-20 rounded-full flex items-center justify-center">3</div>
+            <div class="step bg-blue-500 text-white p-4 rounded-md shadow-md w-64 text-center">Call C API</div>
+            <div class="arrow border-l-2 border-blue-500 h-10"></div>
+
+            <div class="step-circle bg-blue-500 text-white w-20 h-20 rounded-full flex items-center justify-center">4</div>
+            <div class="step bg-blue-500 text-white p-4 rounded-md shadow-md w-64 text-center">Process Response in Python</div>
+            <div class="arrow border-l-2 border-blue-500 h-10"></div>
+
+            <div class="step-circle bg-blue-500 text-white w-20 h-20 rounded-full flex items-center justify-center">5</div>
+            <div class="step bg-blue-500 text-white p-4 rounded-md shadow-md w-64 text-center">Implement Reaction Protocol</div>
+            <div class="arrow border-l-2 border-blue-500 h-10"></div>
+
+            <div class="step-circle bg-blue-500 text-white w-20 h-20 rounded-full flex items-center justify-center">6</div>
+            <div class="step bg-blue-500 text-white p-4 rounded-md shadow-md w-64 text-center">User Feedback Loop</div>
+        </div>
+
+        <div class="content mb-10">
+            <h3 class="text-2xl font-bold text-center text-blue-600">Detailed Steps Explanation</h3>
+            <p class="mt-3">
+                <strong>1. User Input:</strong> The process begins when the user provides input through the application's interface.
+            </p>
+            <p>
+                <strong>2. Detect Emotional State:</strong> The input is analyzed to determine the user's emotional state, which will influence subsequent actions.
+            </p>
+            <p>
+                <strong>3. Call C API:</strong> The system invokes the C-based API to perform actions based on the detected emotional state.
+            </p>
+            <p>
+                <strong>4. Process Response in Python:</strong> The response from the C API is received and processed within the Python environment.
+            </p>
+            <p>
+                <strong>5. Implement Reaction Protocol:</strong> Based on the processed data, the system implements a reaction protocol tailored to the user's emotional state.
+            </p>
+            <p>
+                <strong>6. User Feedback Loop:</strong> The user is prompted for feedback, creating a continuous loop for improvement and responsiveness.
+            </p>
+        </div>
+
+        <div class="skills bg-gray-200 p-5 rounded-md mb-10">
+            <h3 class="text-xl font-bold">Required Skills</h3>
+            <ul class="list-disc pl-5">
+                <li>Proficiency in C programming for API development</li>
+                <li>Strong knowledge of Python programming</li>
+                <li>Understanding of data exchange formats (e.g., JSON, XML)</li>
+                <li>Experience with interfacing C and Python (e.g., using ctypes or cffi)</li>
+                <li>Familiarity with user state management concepts</li>
+            </ul>
+        </div>
+
+        <div class="resources bg-gray-200 p-5 rounded-md mb-10">
+            <h3 class="text-xl font-bold">Resources Required</h3>
+            <ul class="list-disc pl-5">
+                <li>Access to the C-based API documentation</li>
+                <li>Development environment with C and Python compilers</li>
+                <li>Testing tools for integration (e.g., Postman)</li>
+                <li>Version control system (e.g., Git)</li>
+                <li>Collaboration tools (e.g., Slack, Jira)</li>
+            </ul>
+        </div>
+
+        <div class="content mb-10">
+            <h3 class="text-2xl font-bold text-center text-blue-600">Chatbot Interaction Example</h3>
+            
+        <img src="/Firefox_Screenshot_2024-09-27T11-36-41.418Z.png" alt="">
+        
+<!-- Coding Tasks Section -->
+<div class="task-container max-w-3xl mx-auto bg-white p-6 rounded-lg shadow-md mt-8">
+    <h2 class="text-2xl font-semibold text-center text-blue-600">Coding Tasks for Candidates</h2>
+    <ol class="list-decimal ml-5 mt-4 space-y-4">
+        <li class="bg-gray-100 p-4 rounded-lg shadow-sm">
+            <strong>Task 1: Fetch Data from an API</strong> 
+            <span class="text-gray-500 text-sm"><i class="fas fa-clock"></i> 5 minutes</span>
+            <p class="mt-2">Write a C program that fetches data <br> from a public API (e.g., JSONPlaceholder) and prints the response to the console.</p>
+            <p><strong>Resources:</strong> 
+                <a href="https://curl.se/libcurl/c/libcurl-tutorial.html">libcurl Tutorial</a>
+                <a href="https://jsonplaceholder.typicode.com/">JSONPlaceholder API</a>
+            </p>
+        </li>
+        <li class="bg-gray-100 p-4 rounded-lg shadow-sm">
+            <strong>Task 2: Parse JSON Response</strong> 
+            <span class="text-gray-500 text-sm"><i class="fas fa-clock"></i> 5 minutes</span>
+            <p class="mt-2">Extend the previous C program to parse <br> the JSON response and extract specific fields (e.g., title or userId). Print these fields to the console.</p>
+            <p><strong>Resources:</strong> 
+                <a href="https://json-c.github.io/json-c/">JSON-C Documentation</a>
+            </p>
+        </li>
+        <li class="bg-gray-100 p-4 rounded-lg shadow-sm">
+            <strong>Task 3: Conditional Handling in C</strong> 
+            <span class="text-gray-500 text-sm"><i class="fas fa-clock"></i> 5 minutes</span>
+            <p class="mt-2">Modify your C program to include <br> conditional handling. For example, check if a certain field exists in the JSON response and print a message if it doesn't.</p>
+        </li>
+        <li class="bg-gray-100 p-4 rounded-lg shadow-sm">
+            <strong>Task 4: Call the C API from Python</strong> 
+            <span class="text-gray-500 text-sm"><i class="fas fa-clock"></i> 5 minutes</span>
+            <p class="mt-2">Write a Python script that calls the C <br>API you've created. Fetch the data and display it in a user-friendly format.</p>
+            <p><strong>Resources:</strong> 
+                <a href="https://docs.python-requests.org/en/master/">Requests Library Documentation</a>
+            </p>
+        </li>
+        <li class="bg-gray-100 p-4 rounded-lg shadow-sm">
+            <strong>Task 5: Implement Error Handling in Python</strong> 
+            <span class="text-gray-500 text-sm"><i class="fas fa-clock"></i> 5 minutes</span>
+            <p class="mt-2">Enhance your Python script with error <br> handling. Manage potential errors such as failed connections or invalid responses from the C API.</p>
+        </li>
+    </ol>
+</div>
+
+
+
+
+
+<!-- Thank You Section -->
+<div class="thank-you-container max-w-3xl mx-auto bg-white p-6 rounded-lg shadow-md mt-8">
+    <h2 class="text-2xl font-semibold text-center text-blue-600">Thank You!</h2>
+    <p class="mt-4 text-center">
+        Dear Candidate,
+    </p>
+    <p class="mt-2 text-center">
+        We sincerely appreciate the time and effort you have dedicated to this interview process. Your skills and experiences are valuable to us, and we are excited about the possibility of working together.
+    </p>
+    <p class="mt-2 text-center">
+        Our team will be reviewing your responses and performance closely. We will reach out to you soon with the final results and any next steps.
+    </p>
+    <p class="mt-2 text-center">
+        Thank you once again for your interest in joining our team. We wish you all the best in your endeavors!
+    </p>
+    <p class="mt-4 text-center">
+        Best Regards,<br>
+        The Hiring Team
+    </p>
+</div>
+
+
+
+
+
+
+
+
+<!-- Button to Show Answers -->
+<div class="text-center mt-4">
+    <button id="show-answers-btn" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 focus:outline-none">Show the Answers</button>
+</div>
+
+<!-- Explanation of Tasks Section (Initially Hidden) -->
+<div id="answers-section" class="explanation-container max-w-3xl mx-auto bg-white p-6 rounded-lg shadow-md mt-8 hidden overflow-auto">
+    <h2 class="text-2xl font-semibold text-center text-blue-600">Step-by-Step Guide to Coding Tasks</h2>
+    <ol class="list-decimal ml-5 mt-4 space-y-4">
+        <li class="bg-gray-100 p-4 rounded-lg shadow-sm">
+            <strong>Task 1: Fetch Data from an API</strong>
+            <p class="mt-2">In this task, we will use a C library called <strong>libcurl</strong> to fetch data from an API. An API is like a waiter that brings data from a restaurant (the server) to you (the client).</p>
+            <ol class="list-decimal ml-5 mt-2 space-y-2">
+                <li>First, install the <strong>libcurl</strong> library on your computer.</li>
+                <li>Next, write a simple C program to make a GET request to a public API that provides placeholder posts.</li>
+            </ol>
+            <p><strong>Code Explanation:</strong></p>
+            <pre style="white-space: pre-wrap;"><code>#include &lt;stdio.h&gt; // This includes the standard input/output library
+#include &lt;stdlib.h&gt; // This includes the standard library for general functions
+#include &lt;curl/curl.h&gt; // This includes the libcurl library for handling URLs
+
+// This function is called whenever data is received from the API
+size_t write_callback(void *ptr, size_t size, size_t nmemb, void *userdata) {
+    printf("%s", (char *)ptr); // Print the received data to the console
+    return size * nmemb; // Return the size of the data
+}
+
+int main() {
+    CURL *curl = curl_easy_init(); // Initialize a curl session
+    if (curl) {
+        curl_easy_setopt(curl, CURLOPT_URL, "https://jsonplaceholder.typicode.com/posts"); // Set the URL to fetch data from
+        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_callback); // Set the function to handle the received data
+        curl_easy_perform(curl); // Perform the request to fetch the data
+        curl_easy_cleanup(curl); // Clean up the curl session
+    }
+    return 0; // Return 0 to indicate successful completion
+}</code></pre>
+        </li>
+
+        <li class="bg-gray-100 p-4 rounded-lg shadow-sm">
+            <strong>Task 2: Parse JSON Response</strong>
+            <p class="mt-2">After fetching data, we need to understand it. The data we receive is usually in a format called <strong>JSON</strong>, which is like a structured way to organize information. We will use another library called <strong>JSON-C</strong> to parse this data.</p>
+            <ol class="list-decimal ml-5 mt-2 space-y-2">
+                <li>Make sure you include the JSON-C header files in your program.</li>
+                <li>Modify your existing program to extract specific information from the JSON response.</li>
+            </ol>
+            <p><strong>Code Explanation:</strong></p>
+            <pre style="white-space: pre-wrap;"><code>#include &lt;json-c/json.h&gt; // This includes the JSON-C library for parsing JSON
+
+// Inside your main function after fetching data
+json_object *parsed_json = json_tokener_parse(response); // Parse the JSON response
+json_object *title; // Declare a variable to hold the title
+json_object_object_get_ex(parsed_json, "title", &title); // Get the title from the parsed JSON
+printf("Title: %s\n", json_object_get_string(title)); // Print the title to the console</code></pre>
+        </li>
+
+        <li class="bg-gray-100 p-4 rounded-lg shadow-sm">
+            <strong>Task 3: Conditional Handling in C</strong>
+            <p class="mt-2">Sometimes, the data we expect may not be present. So, we need to check if the required information exists before using it. This is called conditional handling.</p>
+            <p><strong>Code Explanation:</strong></p>
+            <pre style="white-space: pre-wrap;"><code>if (json_object_object_get_ex(parsed_json, "title", &title)) { // Check if the title exists
+    printf("Title: %s\n", json_object_get_string(title)); // If it exists, print the title
+} else {
+    printf("Title not found\n"); // If it doesn't exist, print a message saying it's not found
+}</code></pre>
+        </li>
+
+        <li class="bg-gray-100 p-4 rounded-lg shadow-sm">
+            <strong>Task 4: Call the C API from Python</strong>
+            <p class="mt-2">Now, let's use a programming language called Python to call the C API we created. Python has a library called <strong>Requests</strong> that makes it easy to work with APIs.</p>
+            <ol class="list-decimal ml-5 mt-2 space-y-2">
+                <li>First, install the Requests library if you haven't already by running the command: <code>pip install requests</code>.</li>
+                <li>Then, write a Python script to make a GET request to the C API we built.</li>
+            </ol>
+            <p><strong>Code Explanation:</strong></p>
+            <pre style="white-space: pre-wrap;"><code>import requests # Import the Requests library
+
+response = requests.get("http://localhost:8080/api") # Make a GET request to the API
+print(response.json()) # Print the JSON response from the API</code></pre>
+        </li>
+
+        <li class="bg-gray-100 p-4 rounded-lg shadow-sm">
+            <strong>Task 5: Implement Error Handling in Python</strong>
+            <p class="mt-2">Sometimes, things don't go as planned. To handle potential errors, we can use error handling in Python. This helps us manage issues like connection problems or invalid responses.</p>
+            <p><strong>Code Explanation:</strong></p>
+            <pre style="white-space: pre-wrap;"><code>try {
+    response = requests.get("http://localhost:8080/api") # Try to make a request to the API
+    response.raise_for_status() # Check if the request was successful
+    print(response.json()) # If successful, print the JSON response
+} except requests.exceptions.RequestException as e { // If an error occurs, catch it
+    print(f"An error occurred: {e}") // Print the error message
+}</code></pre>
+        </li>
+    </ol>
+</div>
+
+<script>
+    // JavaScript to toggle the visibility of the answers section
+    document.getElementById("show-answers-btn").onclick = function() {
+        const answersSection = document.getElementById("answers-section");
+        if (answersSection.classList.contains("hidden")) {
+            answersSection.classList.remove("hidden"); // Show the answers section
+            this.textContent = "Hide the Answers"; // Change button text to 'Hide the Answers'
+        } else {
+            answersSection.classList.add("hidden"); // Hide the answers section
+            this.textContent = "Show the Answers"; // Change button text back to 'Show the Answers'
+        }
+    }
+</script>
+
+
+
+</body>
+</html>

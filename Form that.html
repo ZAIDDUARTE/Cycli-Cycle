@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meditation Experience Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f7;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .form-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .question {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .options label {
+            background-color: #e0e0e0;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+        }
+
+        .options label:hover {
+            background-color: #d0d0d0;
+        }
+
+        .options input {
+            display: none;
+        }
+
+        .next-button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            display: none;
+        }
+
+        .next-button:active {
+            background-color: #0056b3;
+        }
+
+        .response-container {
+            margin-top: 20px;
+            font-size: 16px;
+            font-style: italic;
+            color: #555;
+        }
+
+        .final-summary {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <div id="questionContainer">
+        <div id="question1" class="question-block">
+            <p class="question">What is your current experience with meditation?</p>
+            <div class="options">
+                <label><input type="radio" name="experience" value="Beginner"> Beginner</label>
+                <label><input type="radio" name="experience" value="Intermediate"> Intermediate</label>
+                <label><input type="radio" name="experience" value="Advanced"> Advanced</label>
+                <label><input type="radio" name="experience" value="Expert"> Expert</label>
+            </div>
+            <button class="next-button" onclick="nextQuestion(2)">Next</button>
+        </div>
+
+        <!-- Additional question blocks -->
+        <div id="question2" class="question-block" style="display:none;">
+            <p class="question">How often do you meditate?</p>
+            <div class="options">
+                <label><input type="radio" name="frequency" value="Daily"> Daily</label>
+                <label><input type="radio" name="frequency" value="Weekly"> Weekly</label>
+                <label><input type="radio" name="frequency" value="Monthly"> Monthly</label>
+                <label><input type="radio" name="frequency" value="Occasionally"> Occasionally</label>
+            </div>
+            <button class="next-button" onclick="nextQuestion(3)">Next</button>
+        </div>
+
+        <div id="question3" class="question-block" style="display:none;">
+            <p class="question">What is your main goal with meditation?</p>
+            <div class="options">
+                <label><input type="radio" name="goal" value="Relaxation"> Relaxation</label>
+                <label><input type="radio" name="goal" value="Self-awareness"> Self-awareness</label>
+                <label><input type="radio" name="goal" value="Stress relief"> Stress relief</label>
+                <label><input type="radio" name="goal" value="Spiritual growth"> Spiritual growth</label>
+            </div>
+            <button class="next-button" onclick="nextQuestion(4)">Next</button>
+        </div>
+
+        <div id="question4" class="question-block" style="display:none;">
+            <p class="question">What kind of meditation do you prefer?</p>
+            <div class="options">
+                <label><input type="radio" name="type" value="Mindfulness"> Mindfulness</label>
+                <label><input type="radio" name="type" value="Mantra"> Mantra</label>
+                <label><input type="radio" name="type" value="Movement-based"> Movement-based</label>
+                <label><input type="radio" name="type" value="Guided"> Guided</label>
+            </div>
+            <button class="next-button" onclick="submitForm()">Submit</button>
+        </div>
+    </div>
+
+    <div id="responseContainer" class="response-container"></div>
+</div>
+
+<script>
+    // Store user choices
+    let userChoices = {};
+
+    // Function to show the next question
+    function nextQuestion(questionNumber) {
+        // Get selected option for the current question
+        const selectedOption = document.querySelector(`#question${questionNumber - 1} input[type="radio"]:checked`);
+        if (selectedOption) {
+            userChoices[`question${questionNumber - 1}`] = selectedOption.value;
+
+            // Hide the current question and show the next one
+            document.getElementById(`question${questionNumber - 1}`).style.display = 'none';
+            document.getElementById(`question${questionNumber}`).style.display = 'block';
+        } else {
+            alert('Please select an option');
+        }
+    }
+
+    // Function to submit the form and generate the final AI response
+    async function submitForm() {
+        const selectedOption = document.querySelector('#question4 input[type="radio"]:checked');
+        if (selectedOption) {
+            userChoices['question4'] = selectedOption.value;
+            document.getElementById('question4').style.display = 'none';
+            await generateFinalResponse();
+        } else {
+            alert('Please select an option');
+        }
+    }
+
+    // Generate final response based on all the user's choices
+    async function generateFinalResponse() {
+        const apiKey = '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';
+
+        const summary = `You have shared the following about your meditation journey: 
+        - Experience Level: ${userChoices['question1']}
+        - Frequency: ${userChoices['question2']}
+        - Goal: ${userChoices['question3']}
+        - Preferred Meditation Type: ${userChoices['question4']}
+        
+        Please provide motivational insight based on these details, keeping the tone positive and uplifting.`;
+
+        const response = await fetch('https://api.openai.com/v1/chat/completions', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${apiKey}`
+            },
+            body: JSON.stringify({
+                model: "gpt-3.5-turbo",
+                messages: [
+                    { role: "system", content: "You are an expert meditation coach." },
+                    { role: "user", content: summary }
+                ]
+            })
+        });
+
+        const result = await response.json();
+        const aiResponse = result.choices && result.choices.length > 0 ? result.choices[0].message.content : "Sorry, I couldn't get a response from the AI.";
+
+        document.getElementById('responseContainer').innerHTML = `<div class="final-summary">Final Response:</div><p>${aiResponse}</p>`;
+    }
+
+    // Enable the "Next" button only when an option is selected
+    document.querySelectorAll('input[type="radio"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+            const parentQuestion = this.closest('.question-block');
+            const nextButton = parentQuestion.querySelector('.next-button');
+            nextButton.style.display = 'inline-block';
+        });
+    });
+</script>
+
+</body>
+</html>

@@ -1,394 +1,648 @@
-<html>
-  <head>
-    <link
-      crossorigin="anonymous"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-      rel="stylesheet"
-    />
-    <link href="https://fonts.cdnfonts.com/css/dimbo" rel="stylesheet" />
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grillaire</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href='https://fonts.googleapis.com/css?family=Dancing Script' rel='stylesheet'>
 
-    <style>
-      body {
-        margin: 0;
-        padding: 0;
-        font-family: "Dimbo", sans-serif;
-        background-image: url("https://uncleerniesbayfrontgrill.com/wp-content/uploads/2020/10/shiplap-repeating-white-500.jpg");
-      }
-
-      .navbar {
-        background: transparent !important;
-        padding-top: 0 !important;
-        margin: 0 !important;
-        position: absolute;
-        width: 100%;
-        z-index: 10;
-      }
-
-      .navbar-nav .nav-link {
+ <style>
+    body{
+        font-family: oswald;
+        background-image: url('https://grillaire.onlywebcoding.com.ua/images/bg-food-dark.png');
         color: white;
-        font-size: 1.2rem;
-        font-weight: bold;
-        margin: 0 15px;
-      }
+    }
+ </style>
+       
+</head>
+<body >
 
-      .navbar-brand img {
-        height: 80px;
-      }
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-transparent px-3" style="position: relative; z-index: 2;">
+    <div class="container d-flex justify-content-between">
+        <a class="navbar-brand text-white" href="#" style="font-size: 34px; font-weight: bold;">
+            <img src="https://static.wixstatic.com/media/e9879a_61700ab51ec9452eac95ed56e753da66~mv2.jpg/v1/fill/w_293,h_248,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/e9879a_61700ab51ec9452eac95ed56e753da66~mv2.jpg" 
+                 alt="Brand Logo" style="height: 150px; width: 180px;">
+        </a>
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav me-3 fs-5 pt-3 mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link  text-white" href="#">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#About">ABOUT US</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#Menu">MENU</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#Gallery">GALLERY</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#Contact">CONTACTS</a>
+                </li>
+            </ul>
+            <a href="#Reservation" class="btn btn-warning fw-bold mt-3 px-4 py-2">BOOK A TABLE</a>
+        </div>
+    </div>
+</nav>
 
-      .background-image {
-        background-image: url("https://uncleerniesbayfrontgrill.com/wp-content/uploads/2020/10/susnet-website-header.jpg");
-        background-size: cover;
-        background-position: center;
-        height: 100vh;
-        width: 100%;
+<!-- Custom styles for hover effect -->
+<style>
+    /* Change link color on hover */
+    .navbar-nav .nav-link:hover {
+        color: #ffc107 !important; /* Yellow color on hover */
+    }
+
+    /* Change button text color on hover */
+    .btn-warning:hover {
+        color: white; /* Change text to white on hover */
+    }
+</style>
+
+<!-- Hero Section -->
+<section class="hero-section d-flex justify-content-start align-items-center text-white" style="background: url('https://grillaire.onlywebcoding.com.ua/images/bg-header.png') no-repeat center center/cover; height: 800px; margin-top: -180px;">
+    <div class="container text-start">
+        <h1 class="display-1 fw-bold">PA​TCHES PUB
+& GRILL
+</h1>
+        <h2 class="display-4 fw-md">Bringing smiles to peoples face's</h2>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="features py-4">
+    <div class="container" style="margin-top: -126px;">
+        <div class="row text-center">
+            <div class="col-md-3 mb-3">
+                <div class="feature-box bg-warning p-5 text-dark">
+                    <i class="fas fa-music fa-4x mb-2"></i>
+                    <h3 class="h6 fw-bold">Live Local Music</h3>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="feature-box bg-warning p-5 text-dark">
+                    <i class="fas fa-award fa-4x mb-2"></i>
+                    <h3 class="h6 fw-bold">Award Winning Food</h3>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="feature-box bg-warning p-5 text-dark">
+                    <i class="fas fa-glass-cheers fa-4x mb-2"></i>
+                    <h3 class="h6 fw-bold">Party @ Patches</h3>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="feature-box bg-warning p-5 text-dark">
+                    <i class="fas fa-cocktail fa-4x mb-2"></i>
+                    <h3 class="h6 fw-bold">Best Happy Hour</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+ <!-- About Section -->
+<div id="About" class="container py-5">
+    <div class="row">
+        <div class="col-md-6">
+            <p class="section-title text-warning" style="font-family: 'Dancing Script', DancingScript; font-size: 24px;">
+                Few words about us ----
+            </p>
+            <h1 class="about-title display-4 fw-bold">
+                ABOUT US
+            </h1>
+            <p class="about-text mb-4">
+                At Patches Pub & Grill, we are all about creating an unforgettable experience for our customers. From our award-winning burgers to our lively atmosphere, we strive to make every visit special. Proudly voted Best Sports Bar, Best Wings, and Best Burgers from 2016 to 2023 by PC Living Magazine, we continue to set the standard for quality and service.
+            </p>
+            <p class="about-text mb-4">
+                Whether you’re here to enjoy live local music, our award-winning food, or just want to catch a game with friends, Patches Pub & Grill offers the perfect place to relax, unwind, and indulge in great food. Our menu boasts signature dishes like juicy burgers with sides including french fries, sweet potato fries, mac & cheese, and more!
+            </p>
+            <p class="about-text mb-4">
+                Join us and discover why we've been voted Best of Bay from 2016 through 2023. Our friendly staff, delicious meals, and lively atmosphere will keep you coming back for more.
+            </p>
+            <p class="signature" style="font-family: 'Dancing script', cursive; font-size: 36px;">
+                PA​TCHES PUB
+& GRILL
+
+            </p>
+            <div class="d-flex mt-4">
+                <div class="me-4 text-center">
+                    <p class="stats display-4 fw-bold text-warning">150+</p>
+                    <p class="stats-desc text-white">VISITORS DAILY</p>
+                </div>
+                <div class="me-4 text-center">
+                    <p class="stats display-4 fw-bold text-warning">100%</p>
+                    <p class="stats-desc text-white">POSITIVE FEEDBACK</p>
+                </div>
+                <div class="text-center">
+                    <p class="stats display-4 fw-bold text-warning">25+</p>
+                    <p class="stats-desc text-white">AWARDS</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 image-container position-relative ">
+            <img alt="Chef standing in the kitchen, smiling" 
+            class="chef-image img-fluid position-absolute top-50 start-50 translate-middle border border-warning rounded p-2 d-none d-md-block" 
+            src="https://static.wixstatic.com/media/e9879a_c20c1f561c6d4bf783f1c3823d2616a1~mv2.jpg/v1/fill/w_749,h_525,al_c,lg_1,q_85,enc_auto/e9879a_c20c1f561c6d4bf783f1c3823d2616a1~mv2.jpg"/>
+       
+        </div>
+    </div>
+</div>
+
+
+<!-- Events & Ongoings Section -->
+<div class="container py-5 d-none d-md-block">
+    <div class="header text-start ">
+        <p class="text-warning" style="font-size: 2.2rem; font-family: 'Dancing script', cursive;">
+            Events & Ongoings ----
+        </p>
+        <h1 class="display-4 fw-bold">
+            EVENTS & ONGOINGS
+        </h1>
+    </div>
+    <div class="content py-4">
+        <div class="d-flex justify-content-center gap-4"> <!-- Increased gap to 4 -->
+            <img src="https://static.wixstatic.com/media/e9879a_f9283f5d163141588fbaf0a2b25b16bd.jpg/v1/fill/w_440,h_232,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/e9879a_f9283f5d163141588fbaf0a2b25b16bd.jpg" alt="Event 1" class="img-fluid mx-2" style="width: 300px; height: auto; object-fit: cover; border: 2px solid #f39c12; border-radius: 5px;"> <!-- Added border -->
+            <img src="https://static.wixstatic.com/media/e9879a_4a6e9ac1598d4b599158e99d930e5ac0~mv2_d_4215_3372_s_4_2.jpg/v1/fill/w_337,h_269,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/e9879a_4a6e9ac1598d4b599158e99d930e5ac0~mv2_d_4215_3372_s_4_2.jpg" alt="Event 2" class="img-fluid mx-2" style="width: 300px; height: auto; object-fit: cover; border: 2px solid #f39c12; border-radius: 5px;"> <!-- Added border -->
+            <img src="https://static.wixstatic.com/media/e9879a_ab2df99039234ad28292f3b9c11b87bf~mv2.jpg/v1/fill/w_508,h_676,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/e9879a_ab2df99039234ad28292f3b9c11b87bf~mv2.jpg" alt="Event 3" class="img-fluid mx-2" style="width: 300px; height: auto; object-fit: cover; border: 2px solid #f39c12; border-radius: 5px;"> <!-- Added border -->
+            <img src="https://static.wixstatic.com/media/e9879a_c415ad870ea04be7a1387cbdfc2394ee~mv2.jpg/v1/fill/w_737,h_553,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/e9879a_c415ad870ea04be7a1387cbdfc2394ee~mv2.jpg" alt="Event 4" class="img-fluid mx-2" style="width: 300px; height: auto; object-fit: cover; border: 2px solid #f39c12; border-radius: 5px;"> <!-- Added border -->
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- Offer Section -->
+<div class="offer-section position-relative d-flex justify-content-center align-items-center text-center" style="background: url('/Untitled\ design\(3\).png') no-repeat center center; background-size: cover; height: 70vh; width: 100%;">
+    <div class="overlay position-absolute w-100 h-100" style="background: rgba(0, 0, 0, 0.85);"></div> <!-- Stronger overlay -->
+    <div class="offer-content text-white z-index-2 position-relative">
+        <p class="fs-2 m-0">Special Offer at Patches Pub</p>
+        <h2 class="display-3 fw-bold">HAPPY HOUR SPECIALS</h2>
+        <h2 class="display-3 fw-bold">25% OFF ALL DRINKS</h2>
+        <button class="btn btn-warning fw-bold mt-3 px-4 py-2">RESERVE A TABLE</button>
+    </div>
+</div>
+
+
+
+
+<!-- Menu-section -->
+<div id="Menu" class="container mt-5">
+    <div class="row">
+        <!-- Left Column for Menu Title -->
+        <div class="col-md-4 mb-5 pb-5 text-start">
+            <p style="font-family: dancing script;" class="text-warning h2 mb-0">Our Menu ---</p>
+            <p  class="h1 fw-bold">MENU</p>
+        </div>
+        
+        <!-- Right Column for Menu Buttons -->
+        <div class="col-md-8 text-center ">
+            <button class="btn btn-warning mx-2">STEAK</button>
+            <button class="btn btn-warning mx-2">RIBS</button>
+            <button class="btn btn-warning mx-2">SAUSAGE</button>
+            <button class="btn btn-warning mx-2">CHICKEN</button>
+            <button class="btn btn-warning mx-2">DESSERTS</button>
+            <button class="btn btn-warning mx-2">DRINKS</button>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- First column with 3 items -->
+        <div class="col-md-6">
+            <div class="d-flex align-items-start mb-4">
+                <img src="https://static.wixstatic.com/media/e9879a_8baaf627b7374e648cba37df8e7fb7c6.png/v1/fill/w_236,h_213,al_c,q_85,enc_auto/untitled.png" alt="Award Winning Wings" class="img-fluid rounded" style="width: 100px; height: 100px; object-fit: cover;"/>
+                <div class="ms-3">
+                    <h5 class="mb-1">Award Winning Wings</h5>
+                    <p class="mb-1 text-white">Deliciously crafted wings that are sure to satisfy your cravings.</p>
+                    <p class="text-warning mb-1" style="font-family: dancing script;">
+                        all wing orders are served with ranch   or bleu cheese dressing & celery
+
+                    </p>
+                    <hr class="text-white my-2">
+                    <p class="fw-bold text-end">$8.99 - $35.99</p>
+                </div>
+            </div>
+            
+          
+            
+            <div class="d-flex align-items-start mb-4">
+                <img src="https://static.wixstatic.com/media/e9879a_f3ecdc01e36e4bd79e6e809e9ecc83a8.jpg/v1/fill/w_253,h_253,al_c,lg_1,q_80,enc_auto/flatbread.jpg" alt="Grilled Buffalo Wings" class="img-fluid rounded" style="width: 100px; height: 100px; object-fit: cover;"/>
+                <div class="ms-3">
+                    <h5 class="mb-1">Appetizers</h5>
+                    <p class="mb-1 text-white">Chips & Queso</p>
+                    <p class="text-warning mb-1" style="font-family: dancing script;">
+                        Fresh Flash Fried Tortilla Chips Served W/ Queso & Salsa
+                    </p>
+                    <hr class="text-white my-2">
+                    <p class="fw-bold text-end">$8.99</p>
+                </div>
+            </div>
+            
+         
+        </div>
+
+        <!-- Second column with 3 items -->
+        <div class="col-md-6">
+            <div class="d-flex align-items-start mb-4">
+                <img src="/Firefox_Screenshot_2024-10-17T15-09-51.798Z.png" alt="Beef & Sausage Kebabs" class="img-fluid rounded" style="width: 100px; height: 100px; object-fit: cover;"/>
+                <div class="ms-3">
+                    <h5 class="mb-1">AWARD WINNING PIZZAS</h5>
+                    <p class="mb-1  text-white">Thin pizza crust topped with our delicious pizza sauce & special house blend cheese</p>
+                    <p class="text-warning mb-1" style="font-family: dancing script;">Fresh sausage, beef tri-tip, red wine vinegar, paprika, tomato, onion, cilantro</p>
+                    <hr class="text-white my-2">
+                    <p class="fw-bold text-end">$20.15</p>
+                </div>
+            </div>
+            <div class="d-flex align-items-start mb-4">
+                <img src="https://static.wixstatic.com/media/e9879a_acf3e89575d04e3dbf2de7eae388cf50.jpg/v1/crop/x_0,y_10,w_2592,h_1934/fill/w_276,h_207,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/DSCF3395_JPG.jpg" alt="Grilled Seafood Platter" class="img-fluid rounded" style="width: 100px; height: 100px; object-fit: cover;"/>
+                <div class="ms-3">
+                    <h5 class="mb-1">Double bacon egg & cheese burger</h5>
+                    <p class="mb-1  text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p class="text-warning mb-1" style="font-family: dancing script;">Lobster tails, sea scallops, shrimp, smoked paprika, thyme, parsley, mint, capers, chili pepper</p>
+                    <hr class="text-white my-2">
+                    <p class="fw-bold text-end">$18.30</p>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+</div>
+
+
+
+<div id="Reservation" class="container-fluid mx-auto p-5" style="background-image: url('https://grillaire.onlywebcoding.com.ua/images/bg-booking.png');">
+    <div class="text-start mb-5 ps-5 ms-5">
+        <h2 class="header-text ps-5 ms-4" style="font-family: 'dancing script', cursive; color: #ffc107;">Reservations</h2>
+        <h1 class="display-4 font-weight-bold ps-5 ms-4" style="font-family: 'oswald', cursive; ">BOOK A TABLE</h1>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="bg-transparent p-4 rounded">
+              
+                <div class="card bg-secondary p-4 rounded">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <button class="btn btn-link text-light">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <h2 class="m-0">OCTOBER 2024</h2>
+                        <button class="btn btn-link text-light">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                    <table class="table table-dark table-bordered text-center calendar-table">
+                        <thead>
+                            <tr>
+                                <th>Su</th>
+                                <th>Mo</th>
+                                <th>Tu</th>
+                                <th>We</th>
+                                <th>Th</th>
+                                <th>Fr</th>
+                                <th>Sa</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>3</td>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>6</td>
+                                <td>7</td>
+                                <td>8</td>
+                                <td>9</td>
+                                <td>10</td>
+                                <td>11</td>
+                            </tr>
+                            <tr>
+                                <td>12</td>
+                                <td>13</td>
+                                <td>14</td>
+                                <td>15</td>
+                                <td>16</td>
+                                <td class="border border-warning bg-warning">17</td>
+                                <td>18</td>
+                            </tr>
+                            <tr>
+                                <td>19</td>
+                                <td>20</td>
+                                <td>21</td>
+                                <td>22</td>
+                                <td>23</td>
+                                <td>24</td>
+                                <td>25</td>
+                            </tr>
+                            <tr>
+                                <td>26</td>
+                                <td>27</td>
+                                <td>28</td>
+                                <td>29</td>
+                                <td>30</td>
+                                <td>31</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mt-5">
+            <select class="form-select bg-dark text-light border-warning mb-3">
+                <option>2 People</option>
+                <option>3 People</option>
+                <option>4 People</option>
+            </select>
+            <select class="form-select bg-dark text-light border-warning mb-3">
+                <option>6:00 am</option>
+                <option>7:00 am</option>
+                <option>8:00 am</option>
+            </select>
+            <input type="text" class="form-control bg-dark text-light border-warning mb-3" placeholder="Name">
+            <input type="text" class="form-control bg-dark text-light border-warning mb-3" placeholder="Phone">
+            <button class="btn btn-warning text-dark fw-bold w-100">RESERVATION</button>
+        </div>
+    </div>
+</div>
+<div class="position-fixed bottom-0 end-0 p-3">
+    <div class="bg-primary text-white rounded-circle d-flex justify-content-center align-items-center" style="width: 50px; height: 50px; cursor: pointer;">
+        <i class="fas fa-comment"></i>
+    </div>
+</div>
+
+
+<!-- Gallery Section -->
+<div id="Gallery" class="container my-5">
+    <div class="text-start mb-4">
+        <p class="text-warning mb-1 fs-3" style="font-family: 'dancing script', cursive; color: #ffc107;">Few words about us</p>
+        <h2 class="display-4 font-weight-bold fs-1 fw-bold">GALLERY</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-4 mb-3 position-relative">
+            <div class="img-hover">
+                <img class="img-fluid rounded" alt="Image 1" 
+                     src="https://static.wixstatic.com/media/e9879a_7dce5d1886f54d8d819cfccca1383ec6~mv2_d_6000_4000_s_4_2.jpg/v1/fill/w_1325,h_883,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/e9879a_7dce5d1886f54d8d819cfccca1383ec6~mv2_d_6000_4000_s_4_2.jpg"
+                     style="height: 300px; width: 100%; object-fit: cover;"/>
+                <div class="overlay text-center d-flex justify-content-center align-items-center">
+                    <div>
+                        <p class="text-warning mb-1 fs-3" style="font-family: 'dancing script', cursive;">Few words about us</p>
+                        <h2 class="display-4 font-weight-bold fs-1 fw-bold">GALLERY</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3 position-relative">
+            <div class="img-hover">
+                <img class="img-fluid rounded" alt="Image 2" 
+                     src="https://static.wixstatic.com/media/e9879a_8ad21bf5763849c7bf37f69bf8cf8647~mv2_d_2048_1536_s_2.jpg/v1/fill/w_1178,h_884,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/e9879a_8ad21bf5763849c7bf37f69bf8cf8647~mv2_d_2048_1536_s_2.jpg"
+                     style="height: 300px; width: 100%; object-fit: cover;"/>
+                <div class="overlay text-center d-flex justify-content-center align-items-center">
+                    <div>
+                        <p class="text-warning mb-1 fs-3" style="font-family: 'dancing script', cursive;">Few words about us</p>
+                        <h2 class="display-4 font-weight-bold fs-1 fw-bold">GALLERY</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3 position-relative">
+            <div class="img-hover">
+                <img class="img-fluid rounded" alt="Image 3" 
+                     src="https://static.wixstatic.com/media/e9879a_a6e733bb12734fb19a03aa0086aa416d~mv2.jpg/v1/fill/w_960,h_720,al_c,q_85,enc_auto/e9879a_a6e733bb12734fb19a03aa0086aa416d~mv2.jpg"
+                     style="height: 300px; width: 100%; object-fit: cover;"/>
+                <div class="overlay text-center d-flex justify-content-center align-items-center">
+                    <div>
+                        <p class="text-warning mb-1 fs-3" style="font-family: 'dancing script', cursive;">Few words about us</p>
+                        <h2 class="display-4 font-weight-bold fs-1 fw-bold">GALLERY</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3 position-relative">
+            <div class="img-hover">
+                <img class="img-fluid rounded" alt="Image 4" 
+                     src="https://static.wixstatic.com/media/e9879a_5fc4184214424ee19f380fe488c6c002~mv2.jpg/v1/fill/w_663,h_884,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/e9879a_5fc4184214424ee19f380fe488c6c002~mv2.jpg"
+                     style="height: 300px; width: 100%; object-fit: cover;"/>
+                <div class="overlay text-center d-flex justify-content-center align-items-center">
+                    <div>
+                        <p class="text-warning mb-1 fs-3" style="font-family: 'dancing script', cursive;">Few words about us</p>
+                        <h2 class="display-4 font-weight-bold fs-1 fw-bold">GALLERY</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3 position-relative">
+            <div class="img-hover">
+                <img class="img-fluid rounded" alt="Image 5" 
+                     src="https://static.wixstatic.com/media/e9879a_dc8a9e4e844045c2831d92efd700a63f~mv2.jpg/v1/fill/w_663,h_884,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/e9879a_dc8a9e4e844045c2831d92efd700a63f~mv2.jpg"
+                     style="height: 300px; width: 100%; object-fit: cover;"/>
+                <div class="overlay text-center d-flex justify-content-center align-items-center">
+                    <div>
+                        <p class="text-warning mb-1 fs-3" style="font-family: 'dancing script', cursive;">Few words about us</p>
+                        <h2 class="display-4 font-weight-bold fs-1 fw-bold">GALLERY</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3 position-relative">
+            <div class="img-hover">
+                <img class="img-fluid rounded" alt="Image 6" 
+                     src="https://static.wixstatic.com/media/e9879a_0163d4fa5b6d4d44914704df41da0b0e~mv2.jpg/v1/fill/w_960,h_720,al_c,q_85,enc_auto/e9879a_0163d4fa5b6d4d44914704df41da0b0e~mv2.jpg"
+                     style="height: 300px; width: 100%; object-fit: cover;"/>
+                <div class="overlay text-center d-flex justify-content-center align-items-center">
+                    <div>
+                        <p class="text-warning mb-1 fs-3" style="font-family: 'dancing script', cursive;">Few words about us</p>
+                        <h2 class="display-4 font-weight-bold fs-1 fw-bold">GALLERY</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Custom CSS for Overlay and Zoom Effect -->
+<style>
+    .img-hover {
         position: relative;
-      }
+        overflow: hidden;
+        transition: transform 0.5s ease; /* Added transition for zoom */
+    }
 
-      /* Black overlay */
-      .background-image::before {
-        content: "";
+    .img-hover img {
+        transition: transform 0.5s ease; /* Smooth transition for zoom */
+    }
+
+    .overlay {
         position: absolute;
         top: 0;
         left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
-        z-index: 1;
-      }
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.6);
+        color: #ffc107; /* Change text color as needed */
+        opacity: 0;
+        transition: opacity 0.5s ease;
+    }
 
-      .about-text {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: white;
-        font-size: 48px;
-        font-weight: bold;
-        z-index: 2;
-      }
+    .img-hover:hover .overlay {
+        opacity: 1;
+    }
 
-      .border-bottom {
-        border-bottom: 10px solid #d2b48c;
-        background-color: transparent;
-        z-index: 3;
-        position: relative;
-      }
-      .content {
-        background-color: white;
-        padding: 20px;
-        margin: 20px auto;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        max-width: 800px;
-      }
+    .img-hover:hover img {
+        transform: scale(1.1); /* Zoom in effect */
+    }
+</style>
 
-      .section-title {
-     color: #000000;
-        font-size: 24px;
-        font-weight: bold;
-      }
 
-      .section-content {
-        margin-top: 10px;
-        font-size: 16px;
-        line-height: 1.6;
-        font-family: Roboto, sans-serif;
-      }
-
-      .image-container img {
-        width: 100%; /* Ensures images are responsive */
-        max-width: 300px; /* Sets all images to a consistent size */
-        height: auto;
-        border-radius: 8px;
-      }
-
-      #footer {
-    position: relative; /* Ensure the footer can position the overlay */
-    background-image: url("https://media-cdn.tripadvisor.com/media/photo-s/0a/75/b0/df/great-local-crowd.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    color: white;
-    text-align: center;
-    font-family: Arial, sans-serif;
-    height: 500px; /* Set a height for the footer */
-    overflow: hidden; /* Prevents content overflow */
-}
-
-#footer::before {
-    content: ""; /* Required for the pseudo-element */
-    position: absolute; /* Position it absolutely */
-    top: 0; /* Align to the top */
-    left: 0; /* Align to the left */
-    right: 0; /* Stretch to the right */
-    bottom: 0; /* Stretch to the bottom */
-    background-color: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
-    z-index: 1; /* Ensure the overlay is above the background */
-}
-
-#footer * {
-    position: relative; /* Ensure child elements are above the overlay */
-    z-index: 2; /* Ensure text is above the overlay */
-}
-
-      #container-fluid {
-        margin-top: 100px;
-      }
-
-      .logo img {
-        max-width: 300px;
-        height: auto;
-      }
-
-      .social-icons a {
-        color: white;
-        font-size: 24px;
-        margin: 0 10px;
-      }
-
-      .contact-info {
-        margin-top: 20px;
-      }
-
-      .contact-info p {
-        margin: 5px 0;
-      }
-
-      .contact-info a {
-        color: #ff0000;
-        text-decoration: none;
-      }
-
-      .accessibility-icon {
-        position: fixed;
-        bottom: 20px;
-        left: 20px;
-        font-size: 40px;
-        color: #ff6600;
-      }
-
-      .background-image {
-        background-image: url("https://panamacityfoodreviews.com/wp-content/uploads/2017/02/patches-interior.jpg");
-        background-size: cover;
-        background-position: center;
-        height: 400px;
-        width: 100%;
-        position: relative;
-      }
-
-      .about-text {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: white;
-        font-size: 48px;
-        font-weight: bold;
-      }
-
-      .border-bottom {
-        border-bottom: 10px solid #d2b48c;
-        background-color: transparent;
-      }
-
-      .content {
-        width: 100%;
-        margin: 0 auto;
-        padding: 20px;
-      }
-
-      .section {
-        display: flex;
-        align-items: center;
-        margin-bottom: 40px;
-      }
-
-      .section .text-container {
-        flex: 1;
-        padding-right: 20px;
-      }
-
-      .section .image-container {
-        flex: 1;
-      }
-
-      .section img {
-        width: 100%;
-        max-width: 400px; /* Control image size */
-        height: auto;
-        border-radius: 10px;
-      }
-
-      .section-title {
-        font-size: 24px;
-        margin-bottom: 15px;
-        font-family: "Dimbo", sans-serif;
-      }
-
-      .section-content {
-        font-size: 16px;
-        line-height: 1.5;
-      }
-
-      @media screen and (max-width: 768px) {
-        .section {
-          flex-direction: column;
-        }
-
-        .section .image-container,
-        .section .text-container {
-          padding: 0;
-        }
-
-        .section img {
-          max-width: 100%;
-          margin-top: 20px;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <!-- Transparent Navbar with no top margin/padding -->
-    <nav class="navbar navbar-expand-lg navbar-light sticky-top" id="navbar">
-      <div class="container-fluid">
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
+  <!-- Testimonials Section -->
+<div class="container my-5">
+    <div class="text-start mb-5">
+        <h3 class="text-warning" style="font-family: 'dancing script', cursive;">Clients ----</h3>
+        <h2 class="display-4 fw-bold font-weight-bold">TESTIMONIALS</h2>
+    </div>
+    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="card text-center p-3 bg-dark text-light">
+                            <p>
+                                "Amazing bar food, prices, live music, service and atmosphere!"
+                            </p>
+                            <div class="d-flex align-items-center justify-content-center">
+                                <img class="rounded-circle" alt="Portrait of Brandi R" 
+                                     src="https://www.cypcs.org.uk/wpcypcs/wp-content/uploads/2022/10/thumbnail.png" width="80" height="80"/>
+                                <div class="ms-3">
+                                    <div class="font-weight-bold">BRANDI R</div>
+                                    <div class="text-warning">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card text-center p-3 bg-dark text-light">
+                            <p>
+                                "Family really enjoyed the pizza, burgers/fries, wings."
+                            </p>
+                            <div class="d-flex align-items-center justify-content-center">
+                                <img class="rounded-circle" alt="Portrait of Joe Terpstra" 
+                                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJDxacENqNeotruR6rehZ2Eiermj-sEcRqKg&s" width="80" height="80"/>
+                                <div class="ms-3">
+                                    <div class="font-weight-bold">JOE TERPSTRA</div>
+                                    <div class="text-warning">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card text-center p-3 bg-dark text-light">
+                            <p>
+                                "Tacos, sliders, philly sandwiches, fried shrimp."
+                            </p>
+                            <div class="d-flex align-items-center justify-content-center">
+                                <img class="rounded-circle" alt="Portrait of Julianne Greer" 
+                                     src="https://cdn.vectorstock.com/i/500p/21/23/avatar-photo-default-user-icon-person-image-vector-47852123.jpg" width="80" height="80"/>
+                                <div class="ms-3">
+                                    <div class="font-weight-bold">JULIANNE GREER</div>
+                                    <div class="text-warning">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more carousel items here if needed -->
+        </div>
+        <button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#testimonialCarousel" type="button">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
         </button>
-        <div
-          class="collapse navbar-collapse justify-content-center"
-          id="navbarNav"
-        >
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="#">HOME</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">MENU</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">DRINKS</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">LIVE CAM</a>
-            </li>
-            <li class="nav-item">
-              <a class="navbar-brand" href="#">
-                <img 
-                  alt="Uncle Ernie's Bayfront Bar & Grill logo"
-                  src="https://static.wixstatic.com/media/e9879a_61700ab51ec9452eac95ed56e753da66~mv2.jpg/v1/fill/w_293,h_248,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/e9879a_61700ab51ec9452eac95ed56e753da66~mv2.jpg"
-                />
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">LIVE MUSIC</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">ABOUT</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">CONTACT</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-    <!-- Background image section with black overlay -->
-    <div class="background-image mb-5">
-      <div class="about-text">ABOUT</div>
+        <button class="carousel-control-next" data-bs-slide="next" data-bs-target="#testimonialCarousel" type="button">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
     </div>
+</div>
 
-    <div class="content">
-      <!-- First Section -->
-      <div class="section">
-        <div class="text-container">
-          <div class="section-title">LIVE LOCAL MUSIC</div>
-          <div class="section-content">
-            Patches Pub & Grill is your go-to destination for live local music, creating an energetic and vibrant atmosphere for all. Join us as we showcase talented artists and bands, ensuring that every night is filled with great tunes and unforgettable memories. With our welcoming environment and dedicated staff, we guarantee an experience that keeps you coming back for more.
-          </div>
-        </div>
-        <div class="image-container">
-          <img
-            alt="Live local music at Patches Pub & Grill"
-            src="https://static.wixstatic.com/media/e9879a_f77ec1da580947568ab023ffbbd803c6.jpg/v1/fill/w_493,h_377,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/e9879a_f77ec1da580947568ab023ffbbd803c6.jpg" 
-          />
-        </div>
-      </div>
-    
-      <!-- Second Section -->
-      <div class="section">
-        <div class="text-container">
-          <div class="section-title">AWARD WINNING FOOD</div>
-          <div class="section-content">
-            At Patches Pub & Grill, we pride ourselves on our award-winning food that caters to every palate. From mouth-watering burgers to fresh seafood dishes, our menu is designed to please. Each meal is crafted with high-quality ingredients, ensuring that every bite is packed with flavor. Whether you're here for a casual meal or a special occasion, our culinary delights will leave you satisfied.
-          </div>
-        </div>
-        <div class="image-container">
-          <img style="width: 370; height: 290px;"
-            alt="Delicious food served at Patches Pub & Grill"
-            src="https://static.wixstatic.com/media/e9879a_773c0624b9d64a2497be2f5292ca9dcc~mv2.jpg/v1/crop/x_50,y_446,w_995,h_994/fill/w_343,h_343,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/e9879a_773c0624b9d64a2497be2f5292ca9dcc~mv2.jpg" 
-          />
-        </div>
-      </div>
-    
-      <!-- Third Section -->
-      <div class="section">
-        <div class="text-container">
-          <div class="section-title">PARTY @ PATCHES</div>
-          <div class="section-content">
-            Patches does not rest; there's always something happening! From Turkey Bowling to Hippie Parties, there's never a dull moment. Enjoy our lively Happy Hours, Craft Beer Hours, Comedy Shows, Pub Crawls, and Boat Trips. You just never know what the owners of Patches Pub & Grill will come up with next, but you can be sure it's going to be a blast!
-          </div>
-        </div>
-        <div class="image-container">
-          <img
-            alt="Fun events at Patches Pub & Grill"
-            src="https://static.wixstatic.com/media/e9879a_52f138e555e343849e3b2c583cdd29dd~mv2.jpg/v1/fill/w_312,h_206,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/e9879a_52f138e555e343849e3b2c583cdd29dd~mv2.jpg" 
-          />
-        </div>
-      </div>
-    </div>
-    
-    <div id="footer" class="container-fluid py-5 mt-5">
-      <div id="container-fluid " class="logo">
-        <img style="width: 220px;"
-          alt="Uncle Ernie's Bayfront Bar &amp; Grill Logo"
-          src="https://static.wixstatic.com/media/e9879a_61700ab51ec9452eac95ed56e753da66~mv2.jpg/v1/fill/w_293,h_248,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/e9879a_61700ab51ec9452eac95ed56e753da66~mv2.jpg"
-        />
-      </div>
-      <div class="social-icons">
-        <p>Connect With Us</p>
-        <a href="https://www.facebook.com/patchespub"><i class="fab fa-facebook"></i></a>
-      </div>
-      <div class="contact-info">
-        <p>Contact Us</p>
-        <p>Address: 4723 THOMAS DRIVE
-          Panama City Beach, FL 32408</p>
-        <p>
-          Email:
-          <a href="mailto:teampatchespub@gmail.com"
-            >teampatchespub@gmail.com</a
-          >
-        </p>
-        <p>Phone: (850) 233-8879</p>
-      </div>
-    </div>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-qY6srQj55W1eSg/5Bgj0aU+F4FfSxNtbD1uI0CQCtDPLGfn9MFDOzZ+6H80OnqQf"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+
+    <!-- Footer Section -->
+<div id="Contact" class="container py-5">
+    <div class="row">
+        <div class="col-md-6">
+            <h4 class="text-warning" style="font-family: 'Brush Script MT', cursive;">Address</h4>
+            <h2 class="font-weight-bold">CONTACTS</h2>
+            <div class="mt-3" style="font-size: 18px;">
+                <p><i class="fas fa-map-marker-alt"></i> 4723 Thomas Drive, Panama City Beach, FL 32408</p>
+                <p><i class="fas fa-phone"></i> T / 850.233.8879</p>
+                <p><i class="fas fa-envelope"></i> teampatchespub@gmail.com</p>
+                <p><i class="fas fa-clock"></i> <strong>HOURS</strong></p>
+                <ul>
+                    <li>OPEN EVERYDAY</li>
+                    <li>11 AM - 12 AM (FRI & SAT)</li>
+                    <li>11 AM - 11 PM (SUN-THURS)</li>
+                </ul>
+            </div>
+            <div class="mt-4">
+                <i class="fab fa-facebook-f me-3 text-white" style="font-size: 24px;"></i>
+                <i class="fab fa-twitter me-3 text-white" style="font-size: 24px;"></i>
+                <i class="fab fa-instagram me-3 text-white" style="font-size: 24px;"></i>
+                <i class="fab fa-youtube text-white" style="font-size: 24px;"></i>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="map mt-3">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2924.673839073048!2d-82.4847436845311!3d42.9786357791506!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88259b1b1b1b1b1b%3A0x1b1b1b1b1b1b1b1b!2s4723%20Thomas%20Drive%2C%20Panama%20City%20Beach%2C%20FL%2032408%2C%20USA!5e0!3m2!1sen!2s!4v1633024800000!5m2!1sen!2s" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+    <div class="text-center mt-5" style="font-size: 14px; color: #ccc;">
+        Copyright ©. All rights reserved. Terms of use and Privacy Policy.
+    </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+</body>
 </html>
